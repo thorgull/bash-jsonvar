@@ -54,7 +54,7 @@ validate-utf8() {
 			n=3
 
 			# check for overlong sequences
-			(( (b1 & 2#00011111) > 0 )) || return 1
+			(( (b1 & 2#00001111) > 0 )) || return 1
 
 			(( i + 2 < len )) || return 1
 
@@ -77,7 +77,7 @@ validate-utf8() {
 			n=4
 
 			# check for overlong sequences
-			(( (b1 & 2#00011111) > 0 )) || return 1
+			(( (b1 & 2#00000111) > 0 )) || return 1
 
 			(( i + 3 < len )) || return 1
 
